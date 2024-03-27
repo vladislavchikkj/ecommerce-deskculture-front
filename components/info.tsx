@@ -29,6 +29,11 @@ const Info: React.FC<InfoProps> = ({ data }) => {
       <hr className="my-4" />
       <div className="flex flex-col gap-y-6">
         <div className="flex items-center gap-x-4">
+          <h3 className="font-semibold text-black whitespace-pre-line">
+            {data.description}
+          </h3>
+        </div>
+        <div className="flex items-center gap-x-4">
           <h3 className="font-semibold text-black">Types:</h3>
           <div>{data?.size?.value}</div>
         </div>
