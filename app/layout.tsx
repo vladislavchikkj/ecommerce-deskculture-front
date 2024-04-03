@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import ModalProvider from "@/providers/modal-provider";
 import ToastProvider from "@/providers/toast-provider";
 
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 const font = Urbanist({ subsets: ["latin"] });
@@ -21,12 +22,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
         <ToastProvider />
         <ModalProvider />
         <Navbar />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
         <Footer />
       </body>
     </html>

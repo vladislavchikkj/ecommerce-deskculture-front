@@ -8,11 +8,11 @@ export const revalidate = 0;
 
 const ContactsPage = () => {
   return (
-    <div className="bg-white">
+    <div>
       <Container>
         <div className="px-4 py-16 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-black mb-8">Contacts info</h1>
-          <p className="text-lg text-gray-800 mb-8">
+          <h1 className="text-3xl font-bold mb-8">Contacts info</h1>
+          <p className="text-lg  mb-8">
             Welcome to our online store! At{" "}
             <span className="font-semibold">Desk Culture</span>, our mission is
             to deliver an exceptional shopping experience to every customer.
@@ -36,14 +36,12 @@ const ContactsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <a
               href="mailto:desk.culture.official@gmail.com"
-              className="contact-card transition duration-300 ease-in-out transform ">
-              <div className="bg-gray-100 rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
+              className="contact-card transition duration-300 ease-in-out transform border">
+              <div className=" rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
                 <AiOutlineMail className="text-3xl text-gray-600 mr-4" />
                 <div>
                   <h2 className="text-xl font-semibold mb-2">Email Support</h2>
-                  <p className="text-gray-700">
-                    desk.culture.official@gmail.com
-                  </p>
+                  <p>desk.culture.official@gmail.com</p>
                 </div>
               </div>
             </a>
@@ -51,8 +49,8 @@ const ContactsPage = () => {
               href="https://www.instagram.com/link"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-card transition duration-300 ease-in-out transform ">
-              <div className="bg-gray-100 rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
+              className="contact-card transition duration-300 ease-in-out transform border">
+              <div className=" rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
                 <FaInstagram className="text-3xl text-gray-600 mr-4" />
                 <div>
                   <h2 className="text-xl font-semibold mb-2">Instagram</h2>
@@ -63,8 +61,8 @@ const ContactsPage = () => {
               href="https://www.tiktok.com/link"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-card transition duration-300 ease-in-out transform ">
-              <div className="bg-gray-100 rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
+              className="contact-card transition duration-300 ease-in-out transform border">
+              <div className=" rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
                 <FaTiktok className="text-3xl text-gray-600 mr-4" />
                 <div>
                   <h2 className="text-xl font-semibold mb-2">TikTok</h2>
@@ -75,8 +73,8 @@ const ContactsPage = () => {
               href="https://www.pinterest.com/link"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-card transition duration-300 ease-in-out transform ">
-              <div className="bg-gray-100 rounded-sm p-6 col-span-3 md:col-span-2 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
+              className="contact-card transition duration-300 ease-in-out transform border">
+              <div className=" rounded-sm p-6 col-span-3 md:col-span-2 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
                 <FaPinterest className="text-3xl text-gray-600 mr-4" />
                 <div>
                   <h2 className="text-xl font-semibold mb-2">Pinterest</h2>
