@@ -32,6 +32,10 @@ export interface Size {
   name: string;
   value: string;
 }
+export interface Comments {
+  id: string;
+  value: string;
+}
 
 export interface Color {
   id: string;
