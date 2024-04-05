@@ -28,18 +28,47 @@ const FormSchema = z.object({
 
 interface CommentsProps {
   title: string;
+  productId?: string;
 }
 
-const Comments: React.FC<CommentsProps> = ({ title }) => {
+const Comments: React.FC<CommentsProps> = ({ title, productId }) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
 
+  const { handleSubmit, control, reset } = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+  });
+
+  const onSubmit = async (formData: z.infer<typeof FormSchema>) => {
+    try {
+      const response = await fetch(`/api/comments/${productId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Reset the form after successful submission
+        reset();
+        // You may also want to update the UI to reflect the new comment
+      } else {
+        // Handle error response
+        console.error("Failed to submit comment");
+      }
+    } catch (error) {
+      console.error("Error submitting comment:", error);
+    }
+  };
+
   return (
     <div className="space-y-4 mb-5">
       <h3 className="font-bold text-3xl pb-5">{title}</h3>
+      <div className="border p-4">place to leave a comment</div>
       <Form {...form}>
-        <form className="w-2/3 space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
             name="bio"

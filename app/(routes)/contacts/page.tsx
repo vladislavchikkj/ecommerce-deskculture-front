@@ -50,7 +50,7 @@ const ContactsPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="contact-card transition duration-300 ease-in-out transform border">
-              <div className=" rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
+              <div className=" rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300 h-full">
                 <FaInstagram className="text-3xl text-gray-600 mr-4" />
                 <div>
                   <h2 className="text-xl font-semibold mb-2">Instagram</h2>
@@ -62,7 +62,7 @@ const ContactsPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="contact-card transition duration-300 ease-in-out transform border">
-              <div className=" rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
+              <div className=" rounded-sm p-6 flex items-center cursor-pointer hover:shadow-md trantition duration-300 h-full">
                 <FaTiktok className="text-3xl text-gray-600 mr-4" />
                 <div>
                   <h2 className="text-xl font-semibold mb-2">TikTok</h2>
@@ -74,7 +74,7 @@ const ContactsPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="contact-card transition duration-300 ease-in-out transform border">
-              <div className=" rounded-sm p-6 col-span-3 md:col-span-2 flex items-center cursor-pointer hover:shadow-md trantition duration-300">
+              <div className=" rounded-sm p-6 col-span-3 md:col-span-2 flex items-center cursor-pointer hover:shadow-md trantition duration-300 h-full">
                 <FaPinterest className="text-3xl text-gray-600 mr-4" />
                 <div>
                   <h2 className="text-xl font-semibold mb-2">Pinterest</h2>
