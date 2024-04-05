@@ -32,7 +32,7 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange>
-          {children}
+          <div className="pt-20">{children}</div>
         </ThemeProvider>
         <Footer />
       </body>
