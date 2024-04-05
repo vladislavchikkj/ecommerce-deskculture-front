@@ -32,7 +32,7 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>
             <div>
-              <p className="hidden sm:block">Category</p>
+              <p className="hidden sm:block">Shop</p>
               <div className="block sm:hidden">
                 <RiMenu2Fill size={25} />
               </div>
