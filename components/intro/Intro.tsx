@@ -3,13 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import style from "./intro.module.scss";
 
+import getCategories from "@/actions/get-categories";
 import { Billboard } from "@/types";
 
 interface BillboardProps {
   data: Billboard;
 }
 
-const Intro: React.FC<BillboardProps> = ({ data }) => {
+const Intro: React.FC<BillboardProps> = async ({ data }) => {
+  const categories = await getCategories();
+
   return (
     <>
       <div className={style.intro}>
