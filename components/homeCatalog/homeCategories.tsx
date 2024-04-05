@@ -15,7 +15,7 @@ const imageSaleURL =
 const HomeCategories = () => {
   return (
     <div className={style.items}>
-      <Link className={style.keyboards} href={"/catalog/categories/Keyboards"}>
+      <Link className={style.keyboards} href={"/"}>
         <Image
           src={imageURL}
           alt={"keyboards"}
@@ -34,10 +34,7 @@ const HomeCategories = () => {
           <FaLocationArrow />
         </div>
       </Link>
-      <Link
-        scroll={false}
-        className={style.mouse}
-        href={"/catalog/categories/Mouse"}>
+      <Link scroll={false} className={style.mouse} href={"/"}>
         <Image
           src={imageMouseURL}
           alt={"mouse"}
@@ -56,7 +53,7 @@ const HomeCategories = () => {
           <FaLocationArrow />
         </div>
       </Link>
-      <Link scroll={false} href={"/catalog/products"} className={style.outlet}>
+      <Link scroll={false} href={"/"} className={style.outlet}>
         <Image
           src={imageSaleURL}
           alt={"sale"}
@@ -75,10 +72,7 @@ const HomeCategories = () => {
           <FaLocationArrow />
         </div>
       </Link>
-      <Link
-        scroll={false}
-        href={"/catalog/categories/Chargers"}
-        className={style.lights}>
+      <Link scroll={false} href={"/"} className={style.lights}>
         <Image
           src={imageAccURL}
           alt={"mouse"}
