@@ -8,7 +8,7 @@ const Navbar = async () => {
   const categories = await getCategories();
 
   return (
-    <div className="border-b fixed top-0 left-0 right-0 z-50 bg-white">
+    <div className="border-b fixed top-0 left-0 right-0 z-40 bg-white">
       <Link
         scroll={false}
         href={`/category/fd9ba0a6-7feb-4051-9f8b-1c012e9b0732`}>
