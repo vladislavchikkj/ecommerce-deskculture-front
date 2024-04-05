@@ -2,6 +2,7 @@ import getCategories from "@/actions/get-categories";
 import MainNav from "@/components/main-nav";
 import NavbarActions from "@/components/navbar-actions";
 import Link from "next/link";
+import style from "./navbar.module.scss";
 
 const Navbar = async () => {
   const categories = await getCategories();
@@ -11,7 +12,7 @@ const Navbar = async () => {
       <Link
         scroll={false}
         href={`/category/fd9ba0a6-7feb-4051-9f8b-1c012e9b0732`}>
-        <div className="bg-black flex justify-center gap-5 text-white text-sm p-1">
+        <div className={style.banner}>
           Black Friday Special! All products for 25% off your entire cart!
           <u> Shop all »</u>
         </div>
