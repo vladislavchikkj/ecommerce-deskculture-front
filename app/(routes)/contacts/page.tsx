@@ -8,7 +8,7 @@ export const revalidate = 0;
 
 const ContactsPage = () => {
   return (
-    <div>
+    <div className="pt-10">
       <Container>
         <div className="px-4 py-16 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold mb-8">Contacts info</h1>
