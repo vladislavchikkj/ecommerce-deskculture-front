@@ -20,6 +20,7 @@ const SearchItem: React.FC<ProductCard> = ({ data }) => {
 
     cart.addItem(data);
   };
+
   return (
     <>
       <div className="flex border rounded-lg pt-2 mt-5 gap-5 justify-between items-center ">
@@ -37,7 +38,7 @@ const SearchItem: React.FC<ProductCard> = ({ data }) => {
             <p className="text-sm text-gray-400 cursor-pointer">
               {data.category.name}
             </p>
-            <p className="pt-2">{data.price}$</p>
+            <p className="pt-2 pb-2">{data.price}$</p>
           </div>
         </div>
         <div className="flex pr-5 text-sm text-gray-500 cursor-pointer">

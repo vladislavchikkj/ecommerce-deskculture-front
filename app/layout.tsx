@@ -6,6 +6,7 @@ import ModalProvider from "@/providers/modal-provider";
 import ToastProvider from "@/providers/toast-provider";
 
 import { ThemeProvider } from "next-themes";
+import Scrollbars from "react-custom-scrollbars-2";
 import "./globals.css";
 
 const font = Urbanist({ subsets: ["latin"] });

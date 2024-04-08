@@ -7,6 +7,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { SearchIcon } from "lucide-react";
 import Image from "next/image";
 import * as React from "react";
+import { Scrollbars } from "react-custom-scrollbars-2";
 import { Input } from "../ui/input";
 import SearchItem from "./searchItem";
 
@@ -15,6 +16,20 @@ interface ProductListProps {
 }
 
 const Search: React.FC<ProductListProps> = ({ items }) => {
+  const [searchTerm, setSearchTerm] = React.useState<string>("");
+  const [isSearching, setIsSearching] = React.useState<boolean>(false);
+
+  const handleSearchInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setSearchTerm(event.target.value);
+    setIsSearching(true);
+  };
+
+  // Фильтрация товаров на основе текста поиска
+  const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <NavigationMenu.Root className="relative z-[1] flex w-full justify-end pr-5">
       <NavigationMenu.List className="center m-0 flex list-none rounded-[6px] p-1 ">
@@ -27,8 +42,8 @@ const Search: React.FC<ProductListProps> = ({ items }) => {
               aria-hidden
             />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight sm:w-[800px] sm:h-[70vh]">
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-800 sm:grid-cols-[0.75fr_2fr] items-start">
+          <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight sm:w-[800px] sm:h-full">
+            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-800 sm:grid-cols-[0.75fr_2fr] items-start relative">
               <li className="row-span-3 grid">
                 <NavigationMenu.Link asChild>
                   <a
@@ -45,11 +60,23 @@ const Search: React.FC<ProductListProps> = ({ items }) => {
                   </a>
                 </NavigationMenu.Link>
               </li>
-              <Input placeholder="Find your device." />
-              <div>
-                {items.map((product) => (
-                  <SearchItem key={product.id} data={product} />
-                ))}
+              <Input
+                placeholder="Find your device."
+                value={searchTerm}
+                onChange={handleSearchInputChange}
+              />
+              <div className="h-[55vh] mt-5 mb-1">
+                <Scrollbars style={{ height: "55vh" }}>
+                  {isSearching &&
+                    searchTerm &&
+                    (filteredItems.length === 0 ? (
+                      <p className="pt-5">No results found</p>
+                    ) : (
+                      filteredItems.map((product) => (
+                        <SearchItem key={product.id} data={product} />
+                      ))
+                    ))}
+                </Scrollbars>
               </div>
             </ul>
           </NavigationMenu.Content>

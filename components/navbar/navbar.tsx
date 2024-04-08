@@ -6,17 +6,7 @@ import Link from "next/link";
 import Search from "../search/search";
 import style from "./navbar.module.scss";
 
-interface ProductsPageProps {
-  params: {
-    categoryId: string;
-  };
-  searchParams: {
-    colorId: string;
-    sizeId: string;
-  };
-}
-
-const Navbar: React.FC<ProductsPageProps> = async () => {
+const Navbar = async () => {
   const categories = await getCategories();
   const products = await getProducts({});
 

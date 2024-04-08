@@ -4,6 +4,7 @@ import HomeCategories from "@/components/homeCatalog/homeCategories";
 import Intro from "@/components/intro/Intro";
 import ProductList from "@/components/product-list";
 
+import { Scrollbars } from "react-custom-scrollbars-2";
 export const revalidate = 0;
 
 const HomePage = async () => {
