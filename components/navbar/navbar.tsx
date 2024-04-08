@@ -2,6 +2,7 @@ import getCategories from "@/actions/get-categories";
 import MainNav from "@/components/main-nav";
 import NavbarActions from "@/components/navbar-actions";
 import Link from "next/link";
+import Search from "../ui/search";
 import style from "./navbar.module.scss";
 
 const Navbar = async () => {
@@ -19,17 +20,17 @@ const Navbar = async () => {
       </Link>
       <div className="relative px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
         <Link href="/" className="flex gap-x-2">
-          <p className="font-bold text-xl uppercase hidden sm:block">
+          <p className="w-full font-bold text-xl uppercase hidden sm:block whitespace-nowrap">
             Desk Culture
           </p>
         </Link>
         <div className="flex justify-around">
           <MainNav data={categories} />
         </div>
-        <div className="w-full flex justify-center text-center font-bold text-xl uppercase">
+        <div className="w-full justify-center text-center font-bold text-xl uppercase flex sm:hidden">
           <Link href={"/"}>DESK CULTURE</Link>
         </div>
-
+        <Search data={categories} />
         <NavbarActions />
       </div>
     </div>
