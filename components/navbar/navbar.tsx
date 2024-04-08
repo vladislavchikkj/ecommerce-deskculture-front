@@ -23,9 +23,13 @@ const Navbar = async () => {
             Desk Culture
           </p>
         </Link>
-        <div>
+        <div className="flex justify-around">
           <MainNav data={categories} />
         </div>
+        <div className="w-full flex justify-center text-center font-bold text-xl uppercase">
+          <Link href={"/"}>DESK CULTURE</Link>
+        </div>
+
         <NavbarActions />
       </div>
     </div>
