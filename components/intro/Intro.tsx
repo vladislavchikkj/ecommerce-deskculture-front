@@ -6,6 +6,9 @@ import style from "./intro.module.scss";
 import getCategories from "@/actions/get-categories";
 import { Billboard } from "@/types";
 
+import Dlogo from "./svg/data.svg";
+import Wlogo from "./svg/intro.svg";
+
 interface BillboardProps {
   data: Billboard;
 }
@@ -25,8 +28,12 @@ const Intro: React.FC<BillboardProps> = async ({ data }) => {
         />
         <div className={style.wrapper}>
           <div className="flex justify-between">
-            <div className={style.l_icon}>{/* <Dlogo /> */}</div>
-            <div className={style.r_icon}>{/* <Wlogo /> */}</div>
+            <div className={style.l_icon}>
+              <Image src={Dlogo} alt={"Dlogo"}></Image>
+            </div>
+            <div className={style.r_icon}>
+              <Image src={Wlogo} alt={"Rlogo"} width={100} height={100}></Image>
+            </div>
           </div>
           <div className={style.infos}>
             <div className={style.info}>

@@ -1,27 +1,20 @@
 "use client";
 
 import logo from "@/public/logo-black.png";
-import { Category } from "@/types";
+import { Product } from "@/types";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { SearchIcon } from "lucide-react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import * as React from "react";
-import { Input } from "./input";
+import { Input } from "../ui/input";
+import SearchItem from "./searchItem";
 
-interface MainNavProps {
-  data: Category[];
+interface ProductListProps {
+  items: Product[];
 }
 
-const Search: React.FC<MainNavProps> = ({ data }) => {
-  const pathname = usePathname();
-
-  const routes = data.map((route) => ({
-    href: `/category/${route.id}`,
-    label: route.name,
-    active: pathname === `/category/${route.id}`,
-  }));
+const Search: React.FC<ProductListProps> = ({ items }) => {
   return (
     <NavigationMenu.Root className="relative z-[1] flex w-full justify-end pr-5">
       <NavigationMenu.List className="center m-0 flex list-none rounded-[6px] p-1 ">
@@ -34,12 +27,12 @@ const Search: React.FC<MainNavProps> = ({ data }) => {
               aria-hidden
             />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight sm:w-[800px] sm:h-[80vh]">
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-800 sm:grid-cols-[0.75fr_2fr]">
+          <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight sm:w-[800px] sm:h-[70vh]">
+            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-800 sm:grid-cols-[0.75fr_2fr] items-start">
               <li className="row-span-3 grid">
                 <NavigationMenu.Link asChild>
                   <a
-                    className="focus:shadow-violet7 from-purple9 to-indigo9 flex items-center
+                    className="focus:shadow-violet7 from-purple9 to-indigo9 flex items-start
                     h-full w-full select-none flex-col justify-center rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
                     href="/">
                     <Image src={logo} alt={"logo"} width={150} height={150} />
@@ -52,26 +45,11 @@ const Search: React.FC<MainNavProps> = ({ data }) => {
                   </a>
                 </NavigationMenu.Link>
               </li>
+              <Input placeholder="Find your device." />
               <div>
-                <Input placeholder="Find your device." />
-                <div className="pt-5 pl-1 text-sm text-gray-400">
-                  Search product...
-                </div>
-                <div className="flex border rounded-md pt-2 mt-5 gap-5 cursor-pointer justify-between items-center">
-                  <div className="flex">
-                    <div className=" border-r p-2">
-                      <Image src={logo} alt={"123"} width={70} height={70} />
-                    </div>
-                    <div className="pl-5">
-                      <p className="font-bold">Keyboard</p>
-                      <p className="text-sm text-gray-400">Category</p>
-                      <p className="pt-2">100$</p>
-                    </div>
-                  </div>
-                  <div className="flex pr-5 text-sm text-gray-400">
-                    add card
-                  </div>
-                </div>
+                {items.map((product) => (
+                  <SearchItem key={product.id} data={product} />
+                ))}
               </div>
             </ul>
           </NavigationMenu.Content>

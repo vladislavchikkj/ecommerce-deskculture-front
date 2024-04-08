@@ -1,12 +1,24 @@
 import getCategories from "@/actions/get-categories";
+import getProducts from "@/actions/get-products";
 import MainNav from "@/components/main-nav";
 import NavbarActions from "@/components/navbar-actions";
 import Link from "next/link";
-import Search from "../ui/search";
+import Search from "../search/search";
 import style from "./navbar.module.scss";
 
-const Navbar = async () => {
+interface ProductsPageProps {
+  params: {
+    categoryId: string;
+  };
+  searchParams: {
+    colorId: string;
+    sizeId: string;
+  };
+}
+
+const Navbar: React.FC<ProductsPageProps> = async () => {
   const categories = await getCategories();
+  const products = await getProducts({});
 
   return (
     <div className="border-b fixed top-0 left-0 right-0 z-40 bg-white">
@@ -30,7 +42,7 @@ const Navbar = async () => {
         <div className="w-full justify-center text-center font-bold text-xl uppercase flex sm:hidden">
           <Link href={"/"}>DESK CULTURE</Link>
         </div>
-        <Search data={categories} />
+        <Search items={products} />
         <NavbarActions />
       </div>
     </div>
