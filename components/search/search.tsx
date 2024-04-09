@@ -27,7 +27,9 @@ const Search: React.FC<ProductListProps> = ({ items }) => {
     setIsSearching(event.target.value !== ""); // Устанавливаем isSearching в true только если ввод не пустой
   };
 
-  const filteredItems = items.filter((item) =>
+  const featuredItems = items.filter((item) => item.isFeatured);
+
+  const filteredItems = featuredItems.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
