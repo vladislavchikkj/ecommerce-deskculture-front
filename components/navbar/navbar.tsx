@@ -29,7 +29,7 @@ const Navbar = async () => {
         <div className="flex justify-around">
           <MainNav data={categories} />
         </div>
-        <div className="w-full justify-center text-center font-bold text-xl uppercase flex sm:hidden pl-5 pr-5 whitespace-nowrap">
+        <div className="w-full justify-center text-center font-bold text-sm uppercase flex sm:hidden pl-5 pr-5 whitespace-nowrap">
           <Link href={"/"}>DESK CULTURE</Link>
         </div>
         <Search items={products} />

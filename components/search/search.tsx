@@ -45,7 +45,7 @@ const Search: React.FC<ProductListProps> = ({ items }) => {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight sm:w-auto sm:h-full">
             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-full sm:grid-cols-[0.75fr_2fr] items-start relative">
-              <li className="row-span-3 grid">
+              <li className="row-span-3 hidden sm:grid">
                 <NavigationMenu.Link asChild>
                   <a
                     className="focus:shadow-violet7 from-purple9 to-indigo9 flex items-center
