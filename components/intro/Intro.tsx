@@ -1,9 +1,9 @@
+"use client";
 import Image from "next/image";
 
 import Link from "next/link";
 import style from "./intro.module.scss";
 
-import getCategories from "@/actions/get-categories";
 import { Billboard } from "@/types";
 
 import Dlogo from "./svg/data.svg";
@@ -14,8 +14,6 @@ interface BillboardProps {
 }
 
 const Intro: React.FC<BillboardProps> = async ({ data }) => {
-  const categories = await getCategories();
-
   return (
     <>
       <div className={style.intro}>
