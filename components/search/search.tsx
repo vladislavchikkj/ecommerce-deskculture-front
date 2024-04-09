@@ -100,7 +100,7 @@ const Search: React.FC<ProductListProps> = ({ items }) => {
         </NavigationMenu.Indicator>
       </NavigationMenu.List>
 
-      <div className="perspective-[2000px] absolute top-full w-max sm:left-0 flex sm:w-full justify-end left-[-14.75rem]">
+      <div className="perspective-[2000px] absolute top-full w-max sm:left-0 flex sm:w-full justify-end left-[-11.75rem]">
         <NavigationMenu.Viewport className="w-[85vw] data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] origin-[top_center] overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
       </div>
     </NavigationMenu.Root>
