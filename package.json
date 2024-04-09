@@ -25,6 +25,7 @@
     "axios": "^1.4.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^1.2.1",
+    "crisp-sdk-web": "^1.0.22",
     "date-fns": "^2.30.0",
     "disqus-react": "^1.1.5",
     "eslint": "8.42.0",

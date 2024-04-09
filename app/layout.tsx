@@ -6,7 +6,7 @@ import ModalProvider from "@/providers/modal-provider";
 import ToastProvider from "@/providers/toast-provider";
 
 import { ThemeProvider } from "next-themes";
-import Scrollbars from "react-custom-scrollbars-2";
+import dynamic from "next/dynamic";
 import "./globals.css";
 
 const font = Urbanist({ subsets: ["latin"] });
@@ -22,9 +22,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
+        <CrispWithNoSSR />
         <ToastProvider />
         <ModalProvider />
         <Navbar />
