@@ -6,7 +6,7 @@ import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MouseEventHandler } from "react";
-import IconButton from "../ui/icon-button";
+import IconButtonBox from "../ui/icon-button-box";
 
 interface ProductCard {
   data: Product;
@@ -15,6 +15,10 @@ interface ProductCard {
 const SearchItem: React.FC<ProductCard> = ({ data }) => {
   const cart = useCart();
   const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/product/${data?.id}`);
+  };
   const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
 
@@ -23,26 +27,19 @@ const SearchItem: React.FC<ProductCard> = ({ data }) => {
 
   return (
     <>
-      <div className="flex border rounded-lg pt-2 mt-5 gap-5 justify-between items-center ">
-        <div className="flex">
-          <div className="border-r p-2  cursor-pointer ">
-            <Image
-              src={data.images[0].url}
-              alt={"logo"}
-              width={70}
-              height={70}
-            />
-          </div>
-          <div className="pl-5">
-            <p className="font-bold cursor-pointer">{data.name}</p>
-            <p className="text-sm text-gray-400 cursor-pointer">
-              {data.category.name}
-            </p>
-            <p className="pt-2 pb-2">{data.price}$</p>
-          </div>
+      <div className="grid grid-cols-[0.75fr_2fr_0.1fr] border rounded-lg pt-2 mt-5 items-center mr-5">
+        <div className="border-r p-2  cursor-pointer " onClick={handleClick}>
+          <Image src={data.images[0].url} alt={"logo"} width={70} height={70} />
+        </div>
+        <div className="pl-5" onClick={handleClick}>
+          <p className="font-bold cursor-pointer text-sm">{data.name}</p>
+          <p className="text-sm text-gray-400 cursor-pointer">
+            {data.category.name}
+          </p>
+          <p className="pt-2 pb-2">{data.price}$</p>
         </div>
         <div className="flex pr-5 text-sm text-gray-500 cursor-pointer">
-          <IconButton
+          <IconButtonBox
             onClick={onAddToCart}
             icon={<ShoppingCart size={20} className="text-gray-600" />}
           />

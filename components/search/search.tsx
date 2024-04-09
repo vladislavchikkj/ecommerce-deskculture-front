@@ -9,6 +9,7 @@ import Image from "next/image";
 import * as React from "react";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { Input } from "../ui/input";
+import SearchFeauted from "./searchFeauted";
 import SearchItem from "./searchItem";
 
 interface ProductListProps {
@@ -23,31 +24,31 @@ const Search: React.FC<ProductListProps> = ({ items }) => {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSearchTerm(event.target.value);
-    setIsSearching(true);
+    setIsSearching(event.target.value !== ""); // Устанавливаем isSearching в true только если ввод не пустой
   };
 
-  // Фильтрация товаров на основе текста поиска
   const filteredItems = items.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
   return (
-    <NavigationMenu.Root className="relative z-[1] flex w-full justify-end pr-5">
+    <NavigationMenu.Root className="relative z-[1] flex w-full justify-end sm:pr-5">
       <NavigationMenu.List className="center m-0 flex list-none rounded-[6px] p-1 ">
         <NavigationMenu.Item className="flex">
           <NavigationMenu.Trigger className="text-violet11  focus:shadow-violet7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-            <p className=" text-sm pr-2">Search</p>
+            <p className="hidden sm:block text-sm pr-2">Search</p>
             <SearchIcon width={20} />
             <CaretDownIcon
               className="text-violet10 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
               aria-hidden
             />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight sm:w-[800px] sm:h-full">
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-800 sm:grid-cols-[0.75fr_2fr] items-start relative">
+          <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight sm:w-auto sm:h-full">
+            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-full sm:grid-cols-[0.75fr_2fr] items-start relative">
               <li className="row-span-3 grid">
                 <NavigationMenu.Link asChild>
                   <a
-                    className="focus:shadow-violet7 from-purple9 to-indigo9 flex items-start
+                    className="focus:shadow-violet7 from-purple9 to-indigo9 flex items-center
                     h-full w-full select-none flex-col justify-center rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
                     href="/">
                     <Image src={logo} alt={"logo"} width={150} height={150} />
@@ -70,12 +71,24 @@ const Search: React.FC<ProductListProps> = ({ items }) => {
                   {isSearching &&
                     searchTerm &&
                     (filteredItems.length === 0 ? (
-                      <p className="pt-5">No results found</p>
+                      <p className="pt-5 text-gray-400">No results found.</p>
                     ) : (
                       filteredItems.map((product) => (
                         <SearchItem key={product.id} data={product} />
                       ))
                     ))}
+                  {!isSearching && searchTerm === "" && (
+                    <>
+                      <p className="pt-5 text-gray-700 pb-5">
+                        FEATURED COLLECTION.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 mr-5">
+                        {filteredItems.map((product) => (
+                          <SearchFeauted key={product.id} data={product} />
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </Scrollbars>
               </div>
             </ul>
@@ -87,8 +100,8 @@ const Search: React.FC<ProductListProps> = ({ items }) => {
         </NavigationMenu.Indicator>
       </NavigationMenu.List>
 
-      <div className="perspective-[2000px] absolute top-full left-0 flex w-full justify-end">
-        <NavigationMenu.Viewport className="data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
+      <div className="perspective-[2000px] absolute top-full w-max sm:left-0 flex sm:w-full justify-end left-[-14.75rem]">
+        <NavigationMenu.Viewport className="w-[85vw] data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-[10px] h-[var(--radix-navigation-menu-viewport-height)] origin-[top_center] overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
       </div>
     </NavigationMenu.Root>
   );
