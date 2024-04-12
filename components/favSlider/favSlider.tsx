@@ -53,7 +53,7 @@ const FavSlider: React.FC<ProductListProps> = ({ title, items }) => {
           modules={[Navigation]}
           className="mySwiper">
           {items.map((item) => (
-            <SwiperSlide>
+            <SwiperSlide key={item.id}>
               <ProductCard key={item.id} data={item} />
             </SwiperSlide>
           ))}
