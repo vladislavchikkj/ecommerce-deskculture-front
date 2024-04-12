@@ -39,31 +39,33 @@ body,
   object-fit: cover;
 }
 .swiper-button-next {
-  width: 40px !important;
-  height: 40px !important;
+  right: 5px !important;
+  width: 30px !important;
+  height: 30px !important;
 }
 .swiper-button-next:after {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem !important;
-  width: 40px !important;
-  height: 40px !important;
+  width: 30px !important;
+  height: 30px !important;
   border-radius: 100%;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px 0px;
 }
 .swiper-button-prev {
-  width: 40px !important;
-  height: 40px !important;
+  right: 5px !important;
+  width: 30px !important;
+  height: 30px !important;
 }
 .swiper-button-prev:after {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem !important;
-  width: 40px !important;
-  height: 40px !important;
+  width: 30px !important;
+  height: 30px !important;
   border-radius: 100%;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px 0px;

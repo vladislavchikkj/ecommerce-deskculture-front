@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import NoResults from "../ui/no-results";
 
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 // import required modules
 
@@ -31,6 +31,10 @@ const FavSlider: React.FC<ProductListProps> = ({ title, items }) => {
           }}
           slidesPerView={1}
           spaceBetween={10}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             640: {
               slidesPerView: 2,
@@ -50,7 +54,7 @@ const FavSlider: React.FC<ProductListProps> = ({ title, items }) => {
             },
           }}
           navigation={true}
-          modules={[Navigation]}
+          modules={[Autoplay, Navigation]}
           className="mySwiper">
           {items.map((item) => (
             <SwiperSlide key={item.id}>
