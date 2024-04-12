@@ -22,7 +22,7 @@ const FavSlider: React.FC<ProductListProps> = ({ title, items }) => {
   return (
     <>
       <div className="space-y-4 pt-15">
-        <h3 className="font-bold text-4xl uppercase pb-5">{title}</h3>
+        <h3 className="font-bold text-4xl uppercase pt-10 pb-10">{title}</h3>
         {items.length === 0 && <NoResults />}
         <Swiper
           style={{
@@ -31,6 +31,7 @@ const FavSlider: React.FC<ProductListProps> = ({ title, items }) => {
           }}
           slidesPerView={1}
           spaceBetween={10}
+          loop={true}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
