@@ -26,14 +26,18 @@ const FavSlider: React.FC<ProductListProps> = ({ title, items }) => {
             //@ts-ignore
             "--swiper-navigation-color": "#000",
           }}
-          slidesPerView={1}
-          spaceBetween={10}
+          slidesPerView={6}
+          spaceBetween={20}
           loop={true}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
           }}
           breakpoints={{
+            250: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
             640: {
               slidesPerView: 2,
               spaceBetween: 20,
