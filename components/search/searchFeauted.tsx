@@ -15,7 +15,7 @@ interface ProductCard {
   data: Product;
 }
 
-const ProductCard: React.FC<ProductCard> = ({ data }) => {
+const SearchFeauted: React.FC<ProductCard> = ({ data }) => {
   const previewModal = usePreviewModal();
   const cart = useCart();
   const router = useRouter();
@@ -39,7 +39,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
   return (
     <div
       onClick={handleClick}
-      className="flex flex-col group cursor-pointer  border p-3 space-y-4">
+      className="flex flex-col group cursor-pointer  border p-3 space-y-4 hover:border-fuchsia-600 transition ease-in-out duration-300 rounded-md">
       {/* Image & actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
@@ -74,4 +74,4 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
   );
 };
 
-export default ProductCard;
+export default SearchFeauted;
