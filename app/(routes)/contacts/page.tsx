@@ -58,7 +58,7 @@ const ContactsPage = () => {
               </div>
             </a>
             <a
-              href="https://www.tiktok.com/link"
+              href="https://www.tiktok.com/@desk.culture"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-card transition duration-300 ease-in-out transform border">
@@ -70,7 +70,7 @@ const ContactsPage = () => {
               </div>
             </a>
             <a
-              href="https://www.pinterest.com/link"
+              href="https://www.pinterest.com/deskcultureofficial"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-card transition duration-300 ease-in-out transform border">
