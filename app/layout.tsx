@@ -7,6 +7,7 @@ import ToastProvider from "@/providers/toast-provider";
 
 import { ThemeProvider } from "next-themes";
 import dynamic from "next/dynamic";
+
 import "./globals.css";
 
 const font = Urbanist({ subsets: ["latin"] });

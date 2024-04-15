@@ -3,9 +3,6 @@
 import { Product } from "@/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
 import NoResults from "../ui/no-results";
 
 import { Autoplay, Navigation } from "swiper/modules";
@@ -59,7 +56,7 @@ const FavSlider: React.FC<ProductListProps> = ({ title, items }) => {
           className="mySwiper">
           {items.map((item) => (
             <SwiperSlide key={item.id}>
-              <SearchFeauted key={item.id} data={item} />
+              <SearchFeauted data={item} />
             </SwiperSlide>
           ))}
         </Swiper>
