@@ -18,7 +18,7 @@ const HomePage = async () => {
   return (
     <div className="">
       <Intro data={billboard} />
-      <div className="relativ bg-slate-200">
+      <div className="relativ bg-white">
         <HomeCategories />
         <div className="flex flex-col gap-y-8 p-4 pt-10 sm:px-6 lg:px-8">
           {!products ? (
