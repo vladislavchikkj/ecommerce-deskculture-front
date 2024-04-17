@@ -3,6 +3,7 @@ import getProducts from "@/actions/get-products";
 import FavSlider from "@/components/favSlider/favSlider";
 import HomeCategories from "@/components/homeCatalog/homeCategories";
 import Intro from "@/components/intro/Intro";
+import Loader from "@/components/loader/loader";
 import NoResults from "@/components/ui/no-results";
 
 export const revalidate = 0;
@@ -17,8 +18,8 @@ const HomePage = async () => {
 
   return (
     <div className="">
-      <Intro data={billboard} />
-      <div className="relativ bg-white">
+      {!billboard ? <Loader /> : <Intro data={billboard} />}
+      <div className="relative bg-white">
         <HomeCategories />
         <div className="flex flex-col gap-y-8 p-4 pt-10 sm:px-6 lg:px-8">
           {!products ? (

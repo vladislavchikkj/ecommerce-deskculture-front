@@ -16,6 +16,7 @@ interface ProductListProps {
 }
 
 const FavSlider: React.FC<ProductListProps> = ({ title, items }) => {
+  console.log(items);
   return (
     <>
       <div className="space-y-4 pt-15">
