@@ -8,10 +8,6 @@ import NoResults from "@/components/ui/no-results";
 
 export const revalidate = 0;
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-
 const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
   const billboard = await getBillboard("78758c38-910c-421d-b56c-62bddf0406a5");
