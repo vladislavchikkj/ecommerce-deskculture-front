@@ -20,8 +20,8 @@ const Intro: React.FC<BillboardProps> = async ({ data }) => {
         <Image
           src={data?.imageUrl}
           alt={"intro"}
-          width={2096}
-          height={1787}
+          width={1920}
+          height={1080}
           className={style.img}
         />
         <div className={style.wrapper}>
