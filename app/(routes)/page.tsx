@@ -3,6 +3,7 @@ import getProducts from "@/actions/get-products";
 import FavSlider from "@/components/favSlider/favSlider";
 import HomeCategories from "@/components/homeCatalog/homeCategories";
 import Intro from "@/components/intro/Intro";
+import NoResults from "@/components/ui/no-results";
 
 export const revalidate = 0;
 
@@ -20,7 +21,11 @@ const HomePage = async () => {
       <div className="relative bg-white">
         <HomeCategories />
         <div className="flex flex-col gap-y-8 p-4 pt-10 sm:px-6 lg:px-8">
-          <FavSlider title={"Featured collection"} items={products} />
+          {!products ? (
+            <NoResults />
+          ) : (
+            <FavSlider title={"Featured collection"} items={products} />
+          )}
         </div>
       </div>
     </div>
