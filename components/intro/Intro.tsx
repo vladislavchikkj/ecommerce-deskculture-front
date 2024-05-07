@@ -23,6 +23,9 @@ const Intro: React.FC<BillboardProps> = async ({ data }) => {
           width={1920}
           height={1080}
           className={style.img}
+          placeholder="blur"
+          blurDataURL={data?.imageUrl}
+          priority={true}
         />
         <div className={style.wrapper}>
           <div className="flex justify-between">
