@@ -18,7 +18,7 @@ const HomeCategories = () => {
     <div className={style.items}>
       <Link
         className={style.keyboards}
-        href={"/category/b32d6e0f-6c50-42a7-b445-7118361f6f81"}>
+        href={"/category/cadc2d54-3feb-444f-87ef-d395b09a0e7c"}>
         <Image
           src={imageURL}
           alt={"keyboards"}
@@ -40,7 +40,7 @@ const HomeCategories = () => {
       <Link
         scroll={false}
         className={style.mouse}
-        href={"/category/a1e3e2da-3cd6-49b8-8a36-a7622e9bc43e"}>
+        href={"/category/b5830d0e-e8cc-48e0-b064-13d28f77b4a0"}>
         <Image
           src={imageMouseURL}
           alt={"mouse"}
@@ -61,7 +61,7 @@ const HomeCategories = () => {
       </Link>
       <Link
         scroll={false}
-        href={"/category/fd9ba0a6-7feb-4051-9f8b-1c012e9b0732"}
+        href={"/category/e8421fb6-70e7-4293-85b4-eef7f506ee1e"}
         className={style.outlet}>
         <Image
           src={imageSaleURL}
@@ -83,7 +83,7 @@ const HomeCategories = () => {
       </Link>
       <Link
         scroll={false}
-        href={"/category/63f1c7d1-8120-4b89-9bba-ea9da517cde7"}
+        href={"/category/e3c60833-1bb1-4626-93c7-408fd0c55f41"}
         className={style.lights}>
         <Image
           src={imageAccURL}

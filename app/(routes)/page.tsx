@@ -13,7 +13,7 @@ const HomePage = async () => {
   const billboard = await getBillboard("d15c9116-f693-414d-8822-20ea69e9d9af");
 
   return (
-    <div className="">
+    <div>
       {!billboard ? <Loader /> : <Intro data={billboard} />}
       <div className="relative bg-white">
         <HomeCategories />
