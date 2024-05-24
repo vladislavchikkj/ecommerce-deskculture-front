@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MainNav from "../main-nav";
 import Search from "../search/search";
-import WhiteLogo from "./img/whitelogo.svg";
+import WhiteLogo from "./img/whitelogo.png";
 
 const Navbar = async () => {
   const categories = await getCategories();
@@ -22,7 +22,7 @@ const Navbar = async () => {
             <Image
               src={WhiteLogo}
               alt={"logo"}
-              className="p-2 lg:hidden w-[4.5rem]"
+              className=" mx-5 pb-1 lg:hidden w-[3rem]"
               width={1000}
             />
           </Link>
