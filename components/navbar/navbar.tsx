@@ -4,6 +4,9 @@ import NavbarActions from "@/components/navbar-actions";
 import Link from "next/link";
 import MainNav from "../main-nav";
 import Search from "../search/search";
+import Logo from "./img/logo.png";
+import WhiteLogo from "./img/whitelogo.svg";
+import Image from "next/image";
 
 const Navbar = async () => {
   const categories = await getCategories();
@@ -12,20 +15,18 @@ const Navbar = async () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-40 pt-3">
       <div className="relative  flex justify-between h-16 items-center bg-[#0000007a] drop-shadow-md ">
-        <div className="h-full flex items-center pr-6  sm:px-6 lg:px-8 hover:bg-black transition-all 1s">
-          <Link href="/" className="flex gap-x-2">
-            <div className="w-full font-bold text-xl uppercase hidden sm:block whitespace-nowrap text-white ">
+        <div className="h-full flex items-center  lg:pr-6 sm:px-6 lg:px-8 hover:bg-black transition-all 1s">
+          <Link href="/" className="flex lg:gap-x-2">
+            <p className="hidden lg:block w-full font-bold lg:text-xl uppercase lg:whitespace-nowrap text-white sm:text-xs">
               Desk Culture
-            </div>
+            </p>
+            <Image src={WhiteLogo} alt={"logo"} width={70} className="p-2" />
           </Link>
         </div>
 
-        <div className="relative  flex justify-between items-center sm:px-6 lg:px-8 rounded-l-xl bg-white w-full h-full ">
+        <div className="relative  flex justify-between items-center px-8 rounded-l-xl bg-white w-full h-full">
           <div className="flex justify-around">
             <MainNav data={categories} />
-          </div>
-          <div className="w-full justify-center font-medium uppercase flex sm:hidden pl-2 pr-2 leading-5">
-            <Link href={"/"}>DESK CULTURE</Link>
           </div>
           <Search items={products} />
           <NavbarActions />

@@ -29,10 +29,18 @@ const Intro: React.FC<BillboardProps> = async ({ data }) => {
         <div className={style.wrapper}>
           <div className="flex justify-between">
             <div className={style.l_icon}>
-              <Image src={Dlogo} alt={"Dlogo"}></Image>
+              <Image
+                src={Dlogo}
+                alt={"Dlogo"}
+                className="hidden lg:block"></Image>
             </div>
             <div className={style.r_icon}>
-              <Image src={Wlogo} alt={"Rlogo"} width={100} height={100}></Image>
+              <Image
+                src={Wlogo}
+                alt={"Rlogo"}
+                width={100}
+                height={100}
+                className="hidden lg:block"></Image>
             </div>
           </div>
           <MainInfo label={data.label} />
