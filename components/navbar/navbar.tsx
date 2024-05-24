@@ -23,6 +23,7 @@ const Navbar = async () => {
               src={WhiteLogo}
               alt={"logo"}
               className="p-2 lg:hidden w-[4.5rem]"
+              width={1000}
             />
           </Link>
         </div>
