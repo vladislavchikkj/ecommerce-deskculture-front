@@ -1,12 +1,11 @@
 import getCategories from "@/actions/get-categories";
 import getProducts from "@/actions/get-products";
 import NavbarActions from "@/components/navbar-actions";
+import Image from "next/image";
 import Link from "next/link";
 import MainNav from "../main-nav";
 import Search from "../search/search";
-import Logo from "./img/logo.png";
 import WhiteLogo from "./img/whitelogo.svg";
-import Image from "next/image";
 
 const Navbar = async () => {
   const categories = await getCategories();
@@ -20,7 +19,12 @@ const Navbar = async () => {
             <p className="hidden lg:block w-full font-bold lg:text-xl uppercase lg:whitespace-nowrap text-white sm:text-xs">
               Desk Culture
             </p>
-            <Image src={WhiteLogo} alt={"logo"} width={70} className="p-2" />
+            <Image
+              src={WhiteLogo}
+              alt={"logo"}
+              width={70}
+              className="p-2 lg:hidden"
+            />
           </Link>
         </div>
 
