@@ -1,11 +1,10 @@
-"use client";
 import Image from "next/image";
 
-import Link from "next/link";
 import style from "./intro.module.scss";
 
 import { Billboard } from "@/types";
 
+import MainInfo from "./mainTitle/mainTitle";
 import Dlogo from "./svg/data.svg";
 import Wlogo from "./svg/intro.svg";
 
@@ -36,21 +35,7 @@ const Intro: React.FC<BillboardProps> = async ({ data }) => {
               <Image src={Wlogo} alt={"Rlogo"} width={100} height={100}></Image>
             </div>
           </div>
-          <div className={style.infos}>
-            <div className={style.info}>
-              <div className={style.article}>table accessories</div>
-              <h1 className={style.title}>
-                <p>DESK</p>
-                <div className="pl-10">
-                  <div className={style.glitch}>CULTURE</div>
-                </div>
-              </h1>
-              <div className={style.subtitle}>{data.label}</div>
-            </div>
-            <Link scroll={false} className={style.btn} href={"/contacts"}>
-              About us
-            </Link>
-          </div>
+          <MainInfo label={data.label} />
         </div>
       </div>
     </>
