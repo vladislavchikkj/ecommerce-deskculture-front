@@ -39,7 +39,7 @@ const SearchFeauted: React.FC<ProductCard> = ({ data }) => {
   return (
     <div
       onClick={handleClick}
-      className="flex flex-col group cursor-pointer  border p-3 space-y-4 hover:border-fuchsia-600 transition ease-in-out duration-300 rounded-md  max-h-96">
+      className="flex flex-col group cursor-pointer  border p-3 space-y-4 hover:border-gray-400 transition ease-in-out duration-300 rounded-md  max-h-96">
       {/* Image & actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image

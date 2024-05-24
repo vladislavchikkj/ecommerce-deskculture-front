@@ -14,7 +14,7 @@ const HomePage = async () => {
   return (
     <div>
       <Intro data={billboard} />
-      <div className="relative bg-white">
+      <div className="relative bg-[#eeeeee]">
         <HomeCategories />
         <div className="flex flex-col gap-y-8 p-4 pt-10 sm:px-6 lg:px-8">
           {!products ? (
