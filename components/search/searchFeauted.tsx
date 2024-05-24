@@ -67,7 +67,7 @@ const SearchFeauted: React.FC<ProductCard> = ({ data }) => {
         <p className="text-xs text-gray-500">{data.category?.name}</p>
       </div>
       {/* Price & Reiew */}
-      <div className="flex justify-between">
+      <div className="flex justify-center p-2">
         <Currency value={data?.price} />
       </div>
     </div>
